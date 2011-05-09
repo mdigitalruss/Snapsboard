@@ -59,12 +59,12 @@ class framework extends database
 			}
 			else
 			{
-				include("./src/static/404.html");	
+				include("./interface/static/404.html");	
 			}
 		}
 		else
 		{
-			include("./src/static/404.html");
+			include("./interface/static/404.html");
 		}
 		
 		//Log a stat!
