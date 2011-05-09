@@ -15,7 +15,11 @@ class database
 			$m = new Mongo("mongodb://".$config['dbHost'].':'.$config['dbPort'].'/'.$config['dbName']);
 			
 			$mdb = $m->selectDB($config['dbName']);
-			$mdb->authenticate($config['dbUser'],$config['dbPass']);
+			
+			if(isset($config['dbUser']) && isset($config['dbPass']))
+			{
+				$mdb->authenticate($config['dbUser'],$config['dbPass']);
+			}
 			
 			$this->db = $mdb;
 		}

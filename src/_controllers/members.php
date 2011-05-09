@@ -102,7 +102,7 @@ Class members
 	
 	public function forgotpass()
 	{
-		global $framework;
+		global $framework, $config;
 		
 		if($framework->user['isMember'])
 		{
@@ -132,20 +132,18 @@ Class members
 					
 					//Email user the pw
 					$message = "Hello ". $member['username']. ", <br/><br/>Recently you requested a new password, so here it is! 
-								<br/><br/>Simply go to <a href=\"http://farmsnaps.com/members/login\">Farmsnaps.com/members/login</a> and
+								<br/><br/>Simply go to <a href=\"". $config['site_url'] ."/members/login\">". $config['site_url'] ."/members/login</a> and
 								enter the following information: <br/><br/>
 								<b>Email:</b> ". $_POST['l_email'] ."<br/>
 								<b>Password:</b> ". $srcPassword ."<br/><br/>
-								Please remember to change your password as soon as you log in. Enjoy!
-								<br/><br/>
-								P.S, I am a robot. Please don't reply to me, because I won't understand what you're saying.";
+								Please remember to change your password as soon as you log in. Enjoy!";
 								
 					
 					$headers  = 'MIME-Version: 1.0' . "\r\n";
 					$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-					$headers .= 'From: Farmsnaps <no-reply@farmsnaps.com>' . "\r\n";
+					$headers .= 'From: '.$config['site_name'].' <'. $config['site_email'] .'>' . "\r\n";
 					
-					mail($_POST['l_email'], 'Farmsnaps.com: New password!', $message, $headers);
+					mail($_POST['l_email'], $config['site_name'].': New password!', $message, $headers);
 					//Status message
 					
 					$model = Array('view' => 'generic_message');
@@ -153,7 +151,7 @@ Class members
 					$model['message'] = "Congratulations. A new password was generated, and sent to your email address. <br/><br/>
 										Please check your email for instructions. <br/><br/>
 										If you can't find the email, please check your spam folder, 
-										and failing that you could add no-reply@farmsnaps.com to your contacts, then request another password.";
+										and failing that you could add ". $config['site_email'] ." to your contacts, then request another password.";
 					$model['link_href'] = "/members/login";
 					$model['link_title'] = "Log In";	
 				}
@@ -324,7 +322,7 @@ Class members
 			$model = Array('view' => 'generic_message');
 				
 			$model['title'] = 'Register';
-			$model['message'] = 'Hey you there! Registration is closed at the moment, but we will be open soon.. Check back later!</p><p><img src="/interface/images/you-cant-come.jpg" alt="You can\'t come! nuh-nuh nuh nuh-nuh!"/><br/>You can\'t come! nuh-nuh nuh nuh-nuh!';
+			$model['message'] = 'Hey you there! Registration is closed at the moment, but we will be open soon.. Check back later!';
 			
 			$model['link_href'] = '/';
 			$model['link_title'] = 'Continue';

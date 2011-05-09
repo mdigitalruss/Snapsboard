@@ -7,17 +7,10 @@
 	<div class="boxout">
 		<div class="head">Bonjour!</div>
 		<div class="body cols">	
-			<p>Welcome to Farmsnaps, a great place to share farming and countryside pictures.</p>
-			<br/>
-			<div class="col-50 txt-c">
-				<iframe src="http://www.facebook.com/plugins/like.php?href=farmsnaps.com&amp;layout=box_count&amp;show_faces=true&amp;width=60&amp;action=like&amp;font=segoe+ui&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:60px; height:65px; margin:auto;" allowTransparency="true"></iframe>
-			</div>
-			<div class="col-50 txt-c">
-				<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="Razor_Rusty">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-			</div>
+			<p>Welcome to Snapsboard, a great place to share pictures.</p>
 		</div>
 		<br/>
-		<div class="head">FarmSnapsStats</div>
+		<div class="head">Stats</div>
 		<div class="body">
 			<p>Members: <? echo $framework->db->users->count(); ?></p>
 			<p>Images: <? echo $framework->db->images->count(); ?></p>
@@ -35,11 +28,6 @@
 			<p>&raquo; <a href="/members/me/">Edit my Account</a></p>
 		</div>
 		<br/>
-		
-		<div class="body">
-			<p>Bug with the site? Comment? Suggestion? Rant? Rage? Feel free to send us a message</p>
-			<p>&raquo; <a href="/inbox/send/4d84f42b1158e403d8000009">Message the Admin</a></p>
-		</div>
 	<?
 		} else {
 	?>

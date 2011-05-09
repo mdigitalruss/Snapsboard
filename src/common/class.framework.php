@@ -9,10 +9,20 @@ class framework extends database
 	
 	public function __construct()
 	{
-		parent::__construct();	//Connect Database
-		
-		//get user details
-		$this->getUserDetails();
+		global $config;
+		//Check for installation
+		if(!isset($config['dbHost']))
+		{
+			//Go to install page
+			header("Location: /install.php");
+		}
+		else
+		{
+			parent::__construct();	//Connect Database
+			
+			//get user details
+			$this->getUserDetails();
+		}
 	}
 	
 	public function handleAction()
