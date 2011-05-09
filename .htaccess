@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteRule ^grid/images/([^/]+)/?$ /src/standalone/getGridImage.php?i=$1 [NC]
+RewriteRule ^grid/images/([^/]+)/([^/]+)/?$ /src/standalone/getGridImage.php?i=$1&sz=$2 [NC]
+RewriteRule ^([^/\.]+)/?$ /index.php?act=$1 [NC]
+RewriteRule ^([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1&sub=$2 [NC]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ /index.php?act=$1&sub=$2&id=$3 [NC]

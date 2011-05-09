@@ -1,0 +1,80 @@
+/* PhotoVault Stylesheet */
+
+*{}
+body{ margin:0px; padding:0px; background:#333; 
+	font-family: 'BPreplayRegular', Arial, sans-serif;
+}
+
+/* fixes */
+a img{ border:0px; } /* why the fuck do browsers do that? */
+
+/* helpers */
+.wrap{ /*width:80%; min-width:960px;*/ width:1000px; margin:auto; }
+
+.cols{ overflow: hidden; }
+.cols .col-20{ width:20%; float:left;}
+.cols .col-25{ width:25%; float:left;}
+.cols .col-30{ width:30%; float:left;}
+.cols .col-40{ width:40%; float:left;}
+.cols .col-50{ width:50%; float:left;}
+.cols .col-60{ width:60%; float:left;}
+.cols .col-70{ width:70%; float:left;}
+
+.txt-r{ text-align:right;}
+.txt-l{ text-align:left;}
+.txt-c{ text-align:center;}
+.txt-error{ color:red; font-size:12px;}
+.txt-ok{ color:green; font-size:12px;}
+.clear{ clear:both; }
+
+.cell{ display:block; line-height:25px; float:left; }
+
+.dropshad-5{ -o-box-shadow:  5px 5px 5px #222; -icab-box-shadow:  5px 5px 5px #222; -khtml-box-shadow:  5px 5px 5px #222; 
+			-moz-box-shadow: 5px 5px 5px #222; -webkit-box-shadow:  5px 5px 5px #222; box-shadow:  5px 5px 5px #222;}
+
+/* Standard elements */
+p{ margin:0px; padding:3px; padding-left:5px; }
+h2{ margin:0px; padding: 3px; padding-top:6px;}
+form label{ display:block; width:250px; float:left; height:20px; line-height:24px;}
+form input{ float:left; height:20px; width:300px; line-height:20px;}
+form textarea{ width:299px; height:60px; float:left; }
+form p{ clear:both; }
+form .submit{ float:none; background:#e2e2e2; border:1px solid #666; margin:5px; width:150px; }
+form .comment{ margin:0px; padding:0px; border:0px; font-family:'BPreplayRegular', Arial, sans-serif; }
+form .submit:hover{ float:none; background:#8ae234; border:1px solid #666; }
+a{ color:#6796DA;}
+
+/* Layout elements */
+.boxout{ padding:8px; }
+.boxout .head{ background:#666; color:#fff; padding:4px; overflow:auto; }
+.boxout .body{ background:#f1f1f1; color:#333; padding:4px; font-size:14px; overflow:auto;}
+.boxout .body a{ color:#5389D6;}
+.boxout .comment{ background:#f1f1f1; color:#333; padding:4px; font-size:14px; overflow:auto; word-wrap: break-word;
+}
+
+/* layout */
+#header{ height:70px; background: #6796DA; color:#f1f1f1; }
+#header a{ color:#fff;}
+
+#header h1{ margin:0px; padding:4px; padding-top:10px; }
+
+#header #userArea{ font-size:14px; padding-top:10px; }
+
+#nav{ height:30px; background:#5389D6; }
+#nav a{ 
+	display: block; width:100px; height:30px; line-height:30px; float:left;
+	color:#fff; text-decoration:none; text-align:center; font-size:14px;
+}
+#nav a:hover{ background:#6796DA; }
+#nav .r{ float:right; }
+
+#content{ 
+	color:#fff;
+	background:#444444;
+	padding-top:10px;
+}
+
+#gallery_d{ margin-left:5px; padding:5px; color:#ccc; font-size:14px; float:left;}
+#gallery_f{ margin-right:5px; padding:5px; color:#ccc; font-size:14px; float:right;}
+
+#footer{ text-align:center; color:#666; font-size:12px;}
